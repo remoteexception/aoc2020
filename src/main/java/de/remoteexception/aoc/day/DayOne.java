@@ -1,7 +1,5 @@
 package de.remoteexception.aoc.day;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.NoSuchElementException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -11,7 +9,7 @@ import static de.remoteexception.aoc.util.ResourceUtil.lines;
 public class DayOne {
     private static final Logger log = Logger.getLogger(DayOne.class.getName());
 
-    public static void main(String[] args) throws URISyntaxException, IOException {
+    public static void main(String[] args) {
         Integer[] numbers = lines("dayone.txt")
             .map(Integer::valueOf).toArray(Integer[]::new);
 

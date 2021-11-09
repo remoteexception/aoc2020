@@ -2,8 +2,6 @@ package de.remoteexception.aoc.day;
 
 import de.remoteexception.aoc.util.Tuple;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
@@ -18,7 +16,7 @@ class DayTwo {
     private static final Logger log = Logger.getLogger(DayTwo.class.getName());
     private static final Pattern PATTERN = Pattern.compile("(\\d+)-(\\d+)\\s(\\w):\\s(.+)");
 
-    public static void main(String[] args) throws URISyntaxException, IOException {
+    public static void main(String[] args) {
         Tuple<Long> result = lines("daytwo.txt")
             .map(PolicyPassword::readPolicy).collect(teeing(
                 filtering(PolicyPassword::isValidByOccurrence, counting()),
