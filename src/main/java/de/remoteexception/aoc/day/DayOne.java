@@ -11,13 +11,14 @@ public class DayOne {
 
     public static void main(String[] args) {
         Integer[] numbers = lines("dayone.txt")
-            .map(Integer::valueOf).toArray(Integer[]::new);
+                .map(Integer::valueOf)
+                .toArray(Integer[]::new);
 
         log.log(Level.INFO, "Product of two numbers: {0}", getProductOfTwo(numbers));
         log.log(Level.INFO, "Product of three numbers: {0}", getProductOfThree(numbers));
     }
 
-    private static int getProductOfTwo(Integer[] numbers) {
+    static int getProductOfTwo(Integer[] numbers) {
         for (int i = 0; i < numbers.length; i++) {
             for (int j = 0; j < numbers.length && i != j; j++) {
                 if (numbers[i] + numbers[j] == 2020) {
@@ -28,7 +29,7 @@ public class DayOne {
         throw new NoSuchElementException("Didn't find two numbers that sum up to 2020.");
     }
 
-    private static int getProductOfThree(Integer[] numbers) {
+    static int getProductOfThree(Integer[] numbers) {
         for (int i = 0; i < numbers.length; i++) {
             for (int j = 0; j < numbers.length && i != j; j++) {
                 for (int k = 0; k < numbers.length && i != k && j != k; k++) {
